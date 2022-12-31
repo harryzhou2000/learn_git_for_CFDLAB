@@ -1,4 +1,26 @@
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [关于版本协作的一些简单教程](#关于版本协作的一些简单教程)
+  - [1. 推荐的Git操作环境](#1-推荐的git操作环境)
+    - [1.1. VsCode的Git操作](#11-vscode的git操作)
+  - [2. 从Gitlab clone 项目](#2-从gitlab-clone-项目)
+  - [3. 一个简单的Follow Through](#3-一个简单的follow-through)
+    - [3.1. 基本信息](#31-基本信息)
+    - [3.2. 工作分支](#32-工作分支)
+    - [3.3. 在远程repo保存](#33-在远程repo保存)
+    - [3.4. 本地临时分支](#34-本地临时分支)
+    - [3.5. 合并冲突](#35-合并冲突)
+    - [3.6. MR合并到dev分支](#36-mr合并到dev分支)
+    - [3.7. pull 与 fetch](#37-pull-与-fetch)
+    - [3.8. .gitignore 以及 git lfs](#38-gitignore-以及-git-lfs)
+
+<!-- /code_chunk_output -->
+
 # 关于版本协作的一些简单教程
+
+
 
 Git是一种分布式版本管理软件，由Linus开发，它的基本界面是命令行界面。
 
