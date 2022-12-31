@@ -412,4 +412,49 @@ Listing excluded patterns
 $ git add .
 $ git commit -m 'added a gmsh file'
 $ git push
+Locking support detected on remote "origin". Consider enabling it with:
+  $ git config lfs.https://gitlab.com/cfdlab_thu/learn_git.git/info/lfs.locksverify true
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.     
+Delta compression using up to 12 threads
+Compressing objects: 100% (4/4), done.  
+Writing objects: 100% (7/7), 16.92 KiB | 1019.00 KiB/s, done.
+Total 7 (delta 0), reused 0 (delta 0), pack-reused 0
+remote: 
+remote: To create a merge request for dev_zhy, visit:
+remote:   https://gitlab.com/cfdlab_thu/learn_git/-/merge_requests/new?merge_request%5Bsource_branch%5D=dev_zhy
+remote:
+To gitlab.com:cfdlab_thu/learn_git.git
+   7a65b3e..85c08da  dev_zhy -> dev_zhy
 ```
+
+可见确实与git lfs相关。由于gitlab项目支持了lfs功能，这里push成功了。
+
+再添加一些实际的gmsh文件，共有4M大小，commit并且push后：
+
+```bash
+$ git add .
+$ git commit -m 'added some bulky gmsh files'
+$ git push
+Locking support detected on remote "origin". Consider enabling it with:
+  $ git config lfs.https://gitlab.com/cfdlab_thu/learn_git.git/info/lfs.locksverify true
+Uploading LFS objects: 100% (2/2), 4.3 MB | 192 KB/s, done.
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 566 bytes | 566.00 KiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: 
+remote: To create a merge request for dev_zhy, visit:
+remote:   https://gitlab.com/cfdlab_thu/learn_git/-/merge_requests/new?merge_request%5Bsource_branch%5D=dev_zhy
+remote:
+To gitlab.com:cfdlab_thu/learn_git.git
+   85c08da..d0b7631  dev_zhy -> dev_zhy
+```
+
+可见有实际的LFS文件传输过程。
+
+上述配置过程中产生或者修改了.gitattributes文件，它是一个git的配置文件，可以手动修改git lfs相关配置。
+
+lfs管理的文件在merge中不会进行比较，而是直接覆盖为最新的。假如你不想某个网格被意外覆盖需要加锁，具体可见[知乎教程](https://zhuanlan.zhihu.com/p/146683392)。
