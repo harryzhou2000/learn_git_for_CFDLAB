@@ -4,9 +4,3 @@ bug bug bug!
 debug debug debug!
 fun1
 fun2
-<<<<<<< HEAD
-ffuunn
-=======
-fun1
-fun2
->>>>>>> write_fun
