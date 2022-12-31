@@ -1,8 +1,8 @@
 my first line!
 hack hack hack!
 bug bug bug!
-debug debug!
+debug debug!！
 fun1
 fun2
 fun1
-fun2
+fun22
