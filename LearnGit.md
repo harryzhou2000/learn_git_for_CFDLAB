@@ -133,6 +133,4 @@ git@gitlab.com:cfdlab_thu/learn_git.git
 
 可以看到，我们目前在branch main上面，其track的upstream是git
 
-## 3.2 进行push
-
 
